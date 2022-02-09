@@ -1,0 +1,10 @@
+<body>
+  <h1>Game OF Three Statistic</h1>
+  <tr *ngFor='let h of history'>
+    <td>Id : {{h.id}} </td>
+    <td> | Winner : {{h.winner}} </td>
+    <td> | Loser : {{h.loser}}</td>
+  </tr>
+  <br>
+  <button type="button" name="button" (click)="exit()">EXIT</button>
+</body>

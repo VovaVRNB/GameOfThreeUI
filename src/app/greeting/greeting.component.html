@@ -1,0 +1,9 @@
+<body>
+      <h1>Hello Player</h1>
+      <div class="nameForm">
+        <h5>Enter your name:</h5>
+        <input type="text" name="name" placeholder="Your name" #name>
+        <br>
+        <button type="button" name="button" (click)="submitName(name.value)">Submit</button>
+      </div>
+</body>

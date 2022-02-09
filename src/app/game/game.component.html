@@ -1,0 +1,29 @@
+<body>
+  <h1>Game OF Three</h1>
+  <div class="game" *ngIf="gameNumber">
+    <div class="number">
+      Number at this game : {{gameNumber}}
+    </div>
+
+    <div class="buttons" *ngIf="isEnd == false">
+      <h3>Choose number</h3>
+      <button type="button" name="button" (click)="newTurn('-1')">-1</button>
+      <button type="button" name="button" (click)="newTurn('0')">0</button>
+      <button type="button" name="button" (click)="newTurn('1')">1</button>
+    </div>
+
+  </div>
+  <div class="game" *ngIf="!gameNumber">
+    <button type="button" name="button" (click)="startGame()">Start</button>
+  </div>
+  <br>
+  <div class="history" *ngFor='let h of history'>
+    <td>{{h.name}} choose number : {{h.chooseNumber}}, now number is : {{h.gameNumber}}, it's {{h.status}}</td>
+  </div>
+  <br>
+  <div class="win" *ngIf="isEnd == true">
+    <h1>{{winner.winner.name}} Win!</h1>
+  </div>
+  <br>
+  <button type="button" name="button" (click)="exit()">EXIT</button>
+</body>
